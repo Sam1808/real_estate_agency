@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='flat',
             name='new_building',
-            field=models.NullBooleanField(db_index=True, verbose_name='Новостройка:'),
+            field=models.NullBooleanField(db_index=True, verbose_name='Новостройка'),
         ),
     ]

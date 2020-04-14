@@ -8,16 +8,13 @@ def connect_owners_and_flats(apps, schema_editor):
     owners = apps.get_model('property', 'Owner')
 
     for flat in flats.objects.all():
-        owner, other_data = owners.objects.get_or_create(
-            owner = flat.owner,
-            owners_phonenumber = flat.owners_phonenumber,
-            normalised_owners_phonenumber = flat.normalised_owners_phonenumber,
+        owner, _ = owners.objects.get_or_create(
+            owner=flat.owner,
+            owners_phonenumber=flat.owners_phonenumber,
+            normalised_owners_phonenumber=flat.normalised_owners_phonenumber,
         )
         owner.own_flats.add(flat)
         owner.save()
-        flat.flat_owners.add(owner)
-        flat.save()
-
 
 class Migration(migrations.Migration):
 

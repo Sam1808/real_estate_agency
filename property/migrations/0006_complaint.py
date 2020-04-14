@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('property', '0005_auto_20200325_2319'),
+        ('property', '0004_auto_20200325_2302'),
     ]
 
     operations = [
@@ -17,7 +17,6 @@ class Migration(migrations.Migration):
             name='Complaint',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
                 ('text', models.TextField(blank=True, verbose_name='Текст жалобы')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 ('flat', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='property.Flat')),

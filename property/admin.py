@@ -1,7 +1,5 @@
 from django.contrib import admin
-
 from .models import Flat, Complaint, Owner
-
 
 class FlatAdmin(admin.ModelAdmin):
     search_fields = ('town','address',)
@@ -25,11 +23,10 @@ class OwnerAdmin(admin.ModelAdmin):
     list_display = (
         'owner',
         'owners_phonenumber',
-        'normalised_owners_phonenumber',
+        'normalized_owners_phonenumber',
     )
     search_fields = ['owner']
     raw_id_fields = ('own_flats',)
-
 
 admin.site.register(Flat, FlatAdmin)
 admin.site.register(Complaint, ComplaintAdmin)

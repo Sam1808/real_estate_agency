@@ -8,7 +8,6 @@ def move_owners_info(apps, schema_editor):
     owners = apps.get_model('property', 'Owner')
 
     for flat in flats.objects.all():
-
         owners.objects.get_or_create(owner=flat.owner, defaults={
             'owners_phonenumber': flat.owners_phonenumber,
             'normalised_owners_phonenumber': flat.normalised_owners_phonenumber,

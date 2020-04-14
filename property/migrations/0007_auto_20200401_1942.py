@@ -13,10 +13,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='complaint',
-            name='title',
-        ),
         migrations.AddField(
             model_name='flat',
             name='liked_by',
